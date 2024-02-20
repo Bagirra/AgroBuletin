@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block title %}<title>AgroBuletin</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Добавление статического CSS файла -->
+  {% load static %}
+  <link rel="icon" href="{% static 'images/icon.png' %}" type="iconca" />
+  <link rel="stylesheet" href="{% static 'boots/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script src="{% static 'boots/js/bootstrap.min.js' %}"></script>
+</head>
+<header>
+  {% block head %}
+  <img class="img-header" src="{% static 'images/ikonka.png' %}">
+  <div class="col-8">
+    <h1>Интегрированная Система Защиты Растений</h1>
+  </div>
+  <div>
+    <button class="geo" onclick="getLocation()">Геолокация</button>
+    <p id="demo"></p>
+  
+    <script>
+     var x = document.getElementById("demo");
+  
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+          x.innerHTML = "Браузер не поддерживает геолокацию.";
+        }
+    }
+    function showPosition(position) {
+      x.innerHTML = "Широта: " + position.coords.latitude + 
+      "<br>Долгота: " + position.coords.longitude;
+    }
+    </script>
+  
+  </div>
+  {% endblock %}
+  {% if user.is_authenticated %}
+   User: {{ user.get_username }}
+    <a href="{% url 'logout'%}?next={{request.path}}">Выход</a>
+  {% else %}
+    <a href="{% url 'login'%}?next={{request.path}}">Вход</a>
+  {% endif %}
+            
+</header>
+
+<body>
+  <div class="row">
+        <!--<div class="col-sm-2">-->
+  {% block sidebar %}
+    <nav>
+      <a href="{% url 'index' %}">Principala/Главная</a>
+      <a href="{% url 'culture' %}">Culture/Культуры</a>
+      <a href="{% url 'prilojenie' %}">Buletin de Avertizare</a>
+    </nav>
+        <!-- </div>-->   
+  {% endblock %}
+  </div>  
+  
+  <div class="col-sm-10 ">
+    {% block content %}{% endblock %}
+    {% block pagination %}
+    {% if is_paginated %}
+    <div class="pagination">
+      <span class="page-links">
+        {% if page_obj.has_previous %}
+        <a href="{{request.path }}?page={{page_obj.previous_page_number }}">Предыдущая</a>
+        {% endif %}
+        <span class="page-current">
+          Страница {{ page_obj.number }} из
+          {{ page_obj.paginator.num_pages }}.
+        </span>
+        {% if page_obj.has_next %}
+        <a href="{{ request.path }}?page={{page_obj.next_page_number }}">Следующая</a>
+        {% endif %}
+        
+      </span>
+    </div>
+    
+    {% endif %}
+    <div class="vremia">
+      <р>{% now "j/m/Y" %}<br>{% now "H:i:s" %}</р>
+    </div>
+    {% endblock %}
+  
+    {% block footer %}
+    <footer>
+      <h3 class="foot">&copy;Tekwill Taraclia 2023</h3>
+    </footer>
+    {% endblock %}
+
+  </div>
+  
+  
+
+</body>
+
+</html>

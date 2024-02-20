@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+  <h1>Selectati/Выбор населённого пункта :</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">ОК</button>
+  </form>
+{% endblock %}

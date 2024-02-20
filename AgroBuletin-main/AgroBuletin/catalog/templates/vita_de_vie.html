@@ -1,0 +1,93 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Vita de vie</title>
+      <form method="POST" action="{% url 'vita_de_vie' %}">
+        {% csrf_token %}
+        <label for="city">Местоположение:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Показать</button>
+      </form>
+    
+    <div>
+        <h2>Фазы роста винограда:</h2>
+        {% for phase in grape_phases %}
+            <p>{{ phase }}</p>
+        {% endfor %}
+    </div>
+      <style>
+        /* Define grid layout with 6 cells */
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 10px;
+          margin: 20px;
+        }
+        /* Style cells */
+        .cell {
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
+        }
+      </style>
+    </head>
+    <body>
+      <h1> ВИНОГРАД</h1>
+      <h4>Уведомления по основным вредным объектам на винограде будут появляться в течении сезона в зависимости от показателей температуры и влажности./Notificările cu privire la principalii dăunători ai strugurilor vor apărea pe parcursul sezonului, în funcție de valorile de temperatură și umiditate.</h4><br/>
+      <h1>Клещи</h1>
+      <div class="grid-container">
+        <div class="cell">{{ acar_result }}<p>  одним из инсектицидов согласно регистра <a href="https://www.pesticide.md/registru-cautare/?name_registr=0&name_reg=0&t=0&c=10567&comp=0&par=18180&search=C%C4%83utare"> http://www.pesticide.md/</a></p></div>
+      </div>
+      <h1>Гроздевая листовёртка/Molia strugurilor</h1>
+      <div class="grid-container">
+        <div class="cell">{{ grozd_result.0 }}<a href="https://www.ecocenter.md/ru/item/lobesia-protectr">феромонные ловушки</a></div>
+        <div class="cell">{{ grozd_result.1 }}<a href="https://www.pesticide.md/registru-cautare/?name_registr=0&name_reg=0&t=0&c=10567&comp=0&par=18169&search=C%C4%83utare">Разрешённые препараты против гроздевки</a></div>
+        <div class="cell">{{ grozd_result.2 }}</div>
+        <div class="cell">{{ grozd_result.3 }}</div>
+        <div class="cell">{{ grozd_result.4 }}</div>
+        <div class="cell">{{ grozd_result.5 }}</div>
+      </div> 
+      
+      <h1>Цикадка/Cicada fitoplasmei</h1>
+      <div class="grid-container">
+       <div class="cell">{{cicada_result}}</div>
+      </div>
+      <h1>Мильдью/Mana</h1>
+      {% if mildiu_result %}
+      <ul>
+      {% for item in mildiu_result %}
+        <li>{{ item }}</li>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>Пока нет угрозы заражения мильдью.</p> 
+      {% endif %}
+      <h1>Оидиум/Făinarea</h1>
+      {% if oidium_result %}
+      <ul>
+      {% for item in oidium_result %}
+        <li>{{ item }}</li>
+      {% endfor %}
+      </ul>
+      {% else %}
+        <p>Пока нет угрозы заражения оидиумом.</p>
+      {% endif %}
+      <h1>Антракноз/Antracnoza</h1>
+      {% if antracnoz_result %}
+      <ul>
+      {% for item in antracnoz_result %}
+        <li>{{ item }}</li>
+      {% endfor %} 
+      </ul>
+      {% else %}
+        <p>Пока нет угрозы заражения антракнозом</p> 
+      {% endif %}      
+      <h1>Бактериальный рак/Cancerul bacterian</h1>
+      <div>{{bacterian_result}}</div>
+      
+    </body>
+</body>    
+{% endblock %}

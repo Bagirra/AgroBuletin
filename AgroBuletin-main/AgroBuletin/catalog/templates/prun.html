@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>СЛИВА/PRUN</title>
+      <style>
+        /* Define grid layout with 6 cells */
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-gap: 10px;
+          margin: 20px;
+        }
+        /* Style cells */
+        .cell {
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
+        }
+      </style>
+    </head>
+<body>
+  <h1> СЛИВА/PRUN</h1>
+    <div class="col-sm-10 ">
+      <div class="col-sm-10 ">
+        <h4>Уведомления по основным вредным объектам на сливе будут появляться в течении сезона в зависимости от показателей температуры и влажности</h4><br/>
+        <h1>Сливовая плодожорка/Viermele prunelor</h1>
+        <div class="grid-container">
+          <div class="cell">{{ vierme_result.0 }}<a href="https://biochemtech.eu/ru/products/plum-fruit-moth-grapholita-funebrana-tr">феромонные ловушки</a></div>
+          <div class="cell">{{ vierme_result.1 }}<a href="https://www.pesticide.md/registru-cautare/?name_registr=0&name_reg=0&t=0&c=0&comp=0&par=18176&search=C%C4%83utare">Разрешённые препараты против сливовой плодожорки</a></div>
+          <div class="cell">{{ vierme_result.2 }}</div>
+          <div class="cell">{{ vierme_result.3 }}</div>
+          <div class="cell">{{ vierme_result.4 }}</div>
+          <div class="cell">{{ vierme_result.5 }}</div>
+        </div>
+        <h1>Восточная плодожорка /Viermele oriental</h1>
+        <div class="grid-container">
+          <div class="cell">{{ o_vierm_result.0 }}<a href="https://biochemtech.eu/ru/products/oriental-fruit-moth-grapholita-molesta-busck">феромонные ловушки</a></div>
+          <div class="cell">{{ o_vierm_result.1 }}<a href="https://www.pesticide.md/registru-cautare/?name_registr=0&name_reg=0&t=0&c=0&comp=0&par=18176&search=C%C4%83utare">Подходят препараты против сливовой плодожорки</a></div>
+          <div class="cell">{{ o_vierm_result.2 }}</div>
+          <div class="cell">{{ o_vierm_result.3 }}</div>
+          <div class="cell">{{ o_vierm_result.4 }}</div>
+          <div class="cell">{{ o_vierm_result.5 }}</div>
+        </div>
+        <div>
+          <h1>Сливовый пилильщик/Viespe cu ferestrău </a>
+          <h1>Монилиальный ожог/Monilia</h1>
+          <h1>Дырчатость листьев/Făinarea</h1>
+          <h1>Красная пятнистость листьев/Mana</h1>
+          <h1>Плодовая гниль/Antracnoza</h1>
+          <h1>Шарка/Cancerul bacterian</h1> 
+        </div> 
+      </div>   
+    </div> 
+</body>    
+{% endblock %}

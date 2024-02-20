@@ -1,0 +1,47 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Define grid layout with 6 cells */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 10px;
+        margin: 20px;
+      }
+        /* Style cells */
+      .cell {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+    <body>
+      <h1>/ЯБЛОНЯ/MĂR</h1>
+      <h4>Уведомления по основным вредным объектам на яблоне будут появляться в течении сезона в зависимости от показателей температуры и влажности./Notificările cu privire la principalii dăunători ai strugurilor vor apărea pe parcursul sezonului, în funcție de valorile de temperatură și umiditate.</h4><br/>
+      <h1>Зелёная яблонная тля/Păduchele verde</h1>
+      <h1>Плодовые клещи/acarienii pomicoli</h1>
+      <h1>Калифорнийская щитовка/păduchele din San-Jose</h1>
+      <h1>Серый почковый долгоносик/gărgăriţa mugurilor la măr</h1>
+      <h1> Яблонный цветоед/Gărgăriţa florilor de măr</h1>
+      <h1>Яблонный пилильщик/Viespea cu ferestrău a merelor</h1>
+      <h1>Листовертки/Moliile rozătoare de frunze</h1>
+      <h1>Минирующие моли/Moliile miniere </h1>
+      <h1>Molia strugurilor/Яблонная плодожорка/</h1>
+      <div class="grid-container">
+        <div class="cell">{{ vierme_mar_result.0 }}<a href="https://www.ecocenter.md/ru/item/lobesia-protectr">феромонные ловушки</a></div>
+        <div class="cell">{{ vierme_mar_result.1 }}<a href="https://www.pesticide.md/registru-cautare/?name_registr=0&name_reg=0&t=0&c=10567&comp=0&par=18169&search=C%C4%83utare">Разрешённые препараты против яблонной плодожорки</a></div>
+        <div class="cell">{{ vierme_mar_result.2 }}</div>
+        <div class="cell">{{ vierme_mar_result.3 }}</div>
+        <div class="cell">{{ vierme_mar_result.4 }}</div>
+        <div class="cell">{{ vierme_mar_result.5 }}</div>
+      </div>
+      <h1>Парша/Rapănul mărului </h1>
+      <h1>Мучнистая роса/Făinarea mărului</h1>
+      <h1>Бактериоз с симптомами ожога/Arsura bacteriană</h1>
+    </body>
+</body>    
+{% endblock %} 

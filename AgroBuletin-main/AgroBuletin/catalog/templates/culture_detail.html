@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>{{culture.title}}: Вредители</h1>
+     {% for vozdeistvie in culture.vozdeistvie.all %}
+         <ul>
+            {% if vozdeistvie.tip == True %}
+               <p><a class="nazvanie1" href="{{ vozdeistvie.get_absolute_url }}">{{ vozdeistvie.name }}</a></p>
+
+           {%endif %}
+         </ul>
+     {% endfor %}
+     <h1>{{culture.title}}: Болезни</h1>
+     {% for vozdeistvie in culture.vozdeistvie.all %}
+         <ul>
+            {% if vozdeistvie.tip == False %}
+               <p><a class="nazvanie1" href="{{ vozdeistvie.get_absolute_url }}">{{ vozdeistvie.name }}</a></p>
+
+            {%endif %}
+         </ul>
+      {% endfor %}
+
+{% endblock %}

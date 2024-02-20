@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<h1>{{ temperature.city }}</h1>
+<p>Date: {{ temperature.data }}</p>
+<p>Min temp: {{ temperature.min_t }}</p>
+<p>Max temp: {{ temperature.max_t }}</p>
+<p>Average temp: {{ temperature.avg_t }}</p>
+<p>Average visibility: {{ temperature.avg_v }}</p  
+{% endblock %}

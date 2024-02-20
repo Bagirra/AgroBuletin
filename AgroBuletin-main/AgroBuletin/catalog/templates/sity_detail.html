@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<h1>{{ city.punct }}</h1>
+{% for temperature in city.temperatures.all %}
+    <p><a href="{% url 'temperature-detail' city_id=city.id temperature_id=temperature.id %}">{{ temperature.data }}: {{ temperature.avg_t }}</a></p>
+{% endfor %}   
+{% endblock %}

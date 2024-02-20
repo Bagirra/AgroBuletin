@@ -1,0 +1,7 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+{% for city in cities %}
+<h2><a href="{% url 'city-detail' pk=city.pk %}">{{ city.punct }}</a></h2>
+{% endfor %}  
+{% endblock %}

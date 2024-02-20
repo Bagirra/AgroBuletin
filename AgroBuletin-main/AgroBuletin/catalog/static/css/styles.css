@@ -1,0 +1,281 @@
+header {
+    background-color:white;
+    height: 70px;
+    display: flex;
+    border-top: 2px solid rgb(4, 123, 44);
+}
+.img-header {
+    margin-top: -5px;
+    width: 90px;
+}
+h1 {
+    text-align: center;
+    color: seagreen;
+    margin-top: 10px;
+    margin-left: 250px;
+    font-family: 'Playfair Display', serif;
+}
+h2{
+    margin-left: 690px;
+    color: rgb(88, 183, 117);
+}
+h3{
+    font-size: 15px;
+}
+.agro{
+    margin-left: 210px;
+}
+nav {
+    height: 60px;
+    background-color: whitesmoke;
+    border-bottom: 2px solid rgb(8, 149, 50);
+    border-top: 2px solid rgb(4, 123, 44);
+
+}
+nav a {
+    font-size: 22px;
+    color: rgb(55, 143, 82);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0px 145px 0px 120px;
+    font-family: 'Patrick Hand', cursive;
+}
+.obrabotka{
+    border: 2px solid  rgb(4, 123, 44);
+    width: 60%;
+    box-shadow: 2px 3px 10px 4px rgba(128, 210, 233, 0.466);
+    margin-left: 300px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+footer{
+    background-color: whitesmoke;
+    min-height: 40px; 
+    color: rgb(88, 183, 117);
+    text-align: center;
+    padding: 5px;
+    border-top: 2px solid  rgb(4, 123, 44);
+    float: left;
+    width: 120%; 
+    border-bottom: 2px solid  rgb(4, 123, 44); ;
+}
+.foot{
+    margin-left: -10px;
+}
+.grozdevka{
+    margin-top: 20px;
+}
+.grozdevka img {
+    margin-bottom: 10px;
+}
+.nazvanie{
+    color: rgb(55, 143, 82);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nazvanie1{
+    color: rgb(55, 143, 82);
+    text-decoration: none;
+    text-align: justify;
+    margin-left: 30 px;
+    font-weight: 700;
+}
+.kulituri{
+    margin-left: 30px;
+}
+.kulitirafoto{
+    margin-left: 300px;
+    width: 800px;
+    height: 400px;
+    margin-bottom: 50px;
+    margin-top: -150px;
+}
+.vetkafoto{
+   width: 200px;
+   height: 100px;
+   background-color: white;
+   margin-top: 60px;
+
+}
+.opisanie{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
+}
+.vozdeistvie{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 10px 0px;
+    font-size: 18px;
+    border: 2px solid lightslategray;
+    box-shadow: 2px 3px 10px 4px rgba(128, 210, 233, 0.466);
+    width: 1500px;
+    margin-left: 15px;
+    min-height: 100px;
+}
+#m-booked-custom-widget-37971{
+    float: right;
+    margin-top: 10px;
+    margin-right: -220px;
+}
+
+[class*=col-]{
+    box-sizing: border-box;
+    float: left;
+}
+.kalikuleator{
+   margin-left: 500px;
+   font-size: 30px;
+   color: black;
+   font-family: 'Patrick Hand', cursive;
+   height: 100px;
+}
+.kalikuleator1{
+   margin-left: 850px;
+   font-size: 30px;
+   color: black;
+   font-family: 'Patrick Hand', cursive;
+}
+
+.data{
+  margin-left: 700px;
+  font-size: 25px;
+  padding-top: -20px;
+  font-family: 'Patrick Hand', cursive;
+}
+.zadaci{
+    border: 1px solid green;
+    padding: 5px 10px  10px ;
+    width: 800px;
+    margin-left: 350px;
+    text-align: justify;
+   
+}
+.opredelenie{
+  color: darkgreen;
+  text-align: center;
+  margin-left: 200px;
+  font-size: 20px;
+
+}
+.teli{
+  color: darkgreen;
+  text-align: justify;
+  margin-left: 160px;
+  font-size: 20px;
+  margin-top: 20px;
+ 
+}
+.teli1{
+    color: darkgreen;
+    text-align: justify;
+    margin-left: -40px;
+    font-size: 20px;
+    margin-top: 20px;
+ }
+
+.dinamika{
+    margin-left: 210px;
+}
+.GL{
+    margin-left: 190px;
+    margin-top: 10px;
+    margin-bottom: -100px;
+}
+h1{
+    text-align: center;
+}
+.knopka{
+   font-size: 20px ;
+   color: green;
+   margin-left: 250px;
+   text-align: justify;
+}
+.knp{
+    zoom: 2.0;
+}
+.ikonka{
+    margin-left: 20px;
+    margin-top: -220px ;
+}
+.ikonka1{
+    margin-left: 20px;
+    padding: 20px;
+    margin-top: -220px ;
+}
+.BdA{
+    border: 1px solid rgb(18, 155, 27);
+    padding: 5px 10px  10px ;
+    width: 300px;
+    margin-left: 10px;
+    text-align: center;
+    float: left;
+    margin-top: 10px;
+    margin-right: -220px;
+    color: darkgreen;
+    
+}
+.ISZR{
+   margin-left: 160px; 
+   margin-top: 10px;
+   text-align: center;
+   color: darkgreen;
+   
+}
+.info{
+    border: 2px solid rgb(18, 155, 27);
+    color: darkgreen;
+    width: 500px;
+    text-align: center;
+    margin-left: 520px;
+    font-size: large;
+    font-weight: 500;
+    text-decoration: none;
+  
+}
+a, a:hover { 
+    color: darkgreen;
+}
+ 
+.CALC{
+    margin-left: 160px;
+    color: darkgreen;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+.vetka{
+    padding-left: 25px;
+}
+.listovertka{
+    margin-top: 50px;
+}
+.GL{
+  margin-left: 190px;
+  margin-top: 10px;
+  margin-bottom: -100px;
+}
+table {
+    border-width: 10px;
+    width: 30%;
+}
+  
+.col-1 {width: 10%;}
+.col-2 {width: 20%;}
+.col-3 {width: 30%;}
+.col-4 {width: 40%;}
+.col-5 {width: 50%;}
+.col-6 {width: 60%;}
+.col-7 {width: 70%;}
+.col-8 {width: 80%;}
+.col-9 {width: 90%;}
+.col-10 {width: 100%;}
+

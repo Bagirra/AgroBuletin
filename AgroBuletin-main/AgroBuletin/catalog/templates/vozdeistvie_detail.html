@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{vozdeistvie.name}}: Описание</h1>
+  {% load static %}
+  
+<div class="vozdeistvie">
+  <div class="grozdevka">
+    {% for foto in vozdeistvie.fotos.all %}
+    <img src="{{ foto.image.url }}" alt="{{ vozdeistvie.name }}"width=380px height="270px"><br/>
+    {% endfor %} 
+  </div>
+  <div>
+    <p class="opisanie">{{ vozdeistvie.describe|safe }}</p>
+    <p>СТАДИИ РАЗВИТИЯ</p>
+    <p class="opisanie">{{ vozdeistvie.describe_1|safe }}</p>
+    <p>ПОВРЕЖДЕНИЯ</p>
+    <p class="opisanie">{{ vozdeistvie.describe2|safe }}</p>
+    <p>МЕРЫ БОРЬБЫ</p>
+    <p class="opisanie">{{ vozdeistvie.describe3|safe }}</p>
+  </div>
+</div>
+{% endblock %}

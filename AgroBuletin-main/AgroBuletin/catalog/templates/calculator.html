@@ -1,0 +1,63 @@
+{% extends "base_generic.html" %}
+ 
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML CSS JS</title>
+</head>
+
+<body>
+    <p class="teli"><b>Для точного определения порогов вредоносности гроздевой листовёртки проведите обследование на
+            винограднике, внимательно осмотрите на не менее 10 -15 кустах 100 соцветий (гроздей), результаты
+            обследования внесите в калькулятор.
+
+    </p>
+
+    <form>
+        <fieldset>
+            <legend> КАЛЬКУЛЯТОР<br> Определения порога вредоносности</legend>
+            <p><label for="a">Введите % соцветий с обнаруженой яйцекладкой <em></em></label><input type="float" id="a" value="0">
+            </p>
+            <p><label for="b">Введите % отродившихся гусениц</label><input type="float" id="b" value="0"></p>
+        </fieldset>
+        <button id="buttonId">Ответ</button>
+        <p id='result'></p>
+    </form>
+    <div class="opredelenie">
+        <p>Целесообразность проведения химических обработок </b>зависит от плотности популяции каждой генерации, которая
+            определяется количеством отловленных бабочек в среднем за сутки массового лёта в одну ловушку. На участках,
+            где численнлсть гроздевой листовертки не превышает ЭПВ (20 особей) – защитные мероприятия можно не
+            проводить.</p>
+    </div>
+
+    <script>
+        let button = document.getElementById("buttonId")
+
+        button.onclick = function (e) {
+            e.preventDefault();
+            let a = document.getElementById("a").value
+            let b = document.getElementById("b").value
+            let res = document.getElementById("result")
+            console.log(a, b)
+
+            if (a >= 9, b >= 1) {
+                alert('Проведите обработку одним из препаратов ЛАРВИЦИДНОГО действия');
+                res.innerHTML = 'Проведите обработку одним из препаратов ЛАРВИЦИДНОГО действия'
+            } else if (a < 9, b >= 8) {
+                alert("Проведите обработку одним из препаратов ЛАРВИЦИДНОГО действия");
+                res.innerHTML = 'Проведите обработку одним из препаратов ЛАРВИЦИДНОГО действия'
+            } else {
+                alert('проведение обработки нецелесообразно')
+                res.innerHTML = 'проведение обработки нецелесообразно'
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+ 
+{% endblock %}

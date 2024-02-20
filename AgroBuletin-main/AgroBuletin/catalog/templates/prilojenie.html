@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated and user.is_staff %}
+    <aside> 
+      <a href="../weather.html">Vreme/Погода</a>
+      <a href="https://biochemtech.eu/">Feromoni/Феромоны</a>
+      <a href="https://docs.google.com/spreadsheets/d/1xfMgKLnJzW2-yPAi6XpSfJ7Q8IygR1zvF-r9CrZhUYs/edit#gid=0">СERCETĂRI DE TRASEU</a>
+      <a href="https://drive.google.com/drive/folders/1QwIU89Xew31qe3vVu_zfK7EpqYNNQ3wo">FENOLOGIA</a>
+      <a href="https://drive.google.com/drive/folders/1_DR_NK5-EL9a15Pnz-4wzsYwvqq8lqas">ССР</a>
+      <a href="https://drive.google.com/drive/folders/1hgxF5z79T4V9DO8mYX1YHsHFT9KPJ-Gv">FORMA 7</a>
+      <a href="https://rsc.gov.md/">Controale planificate/Плановые контроли/</a>
+    </aside>
+{% endif %}
+<!-- Вторая часть страницы, видимая для всех пользователей -->
+
+    {% if show_full_content %}
+    <aside> 
+      <a href="../weather.html">Vreme/Погода</a>
+      <a href="https://biochemtech.eu/">Feromoni/Феромоны</a>
+      <a href="https://docs.google.com/spreadsheets/d/1xfMgKLnJzW2-yPAi6XpSfJ7Q8IygR1zvF-r9CrZhUYs/edit#gid=0">СERCETĂRI DE TRASEU</a>
+      <a href="https://drive.google.com/drive/folders/1QwIU89Xew31qe3vVu_zfK7EpqYNNQ3wo">FENOLOGIA</a>
+      <a href="https://drive.google.com/drive/folders/1_DR_NK5-EL9a15Pnz-4wzsYwvqq8lqas">ССР</a>
+      <a href="https://drive.google.com/drive/folders/1hgxF5z79T4V9DO8mYX1YHsHFT9KPJ-Gv">FORMA 7</a>
+      <a href="https://rsc.gov.md/">Controale planificate/Плановые контроли/</a>
+    </aside><!-- Ваш HTML-код для полной страницы -->
+    {% else %}
+        <!-- Ваш HTML-код для второй части страницы -->
+        <a href="{% url 'vita_de_vie' %}"><h6>Vita de vie/Виноград</h6></a>
+        <a href="{% url 'prun' %}"><h6>Prun/Слива<h6></a>
+        <a href="{% url 'mar' %}"><h6>Măr/Яблоня</h6></a>
+        <a href="{% url 'piersic' %}"><h6>Piersic/Персик/</h6></a>
+        <a href="{% url 'cires' %}"><h6>Cireș/Черешня</h6></a>
+        <a href="{% url 'cereale' %}"><h6>Cereale/Зерновые</h6></a>
+    {% endif %}
+{% endblock %}
